@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  TableViewDemo
 //
-//  Created by Mohamed Sobhi  Fouda on 2/6/18.
+//  Created by Mohamed Sobhi Fouda on 2/6/18.
 //  Copyright © 2018 Mohamed Sobhi Fouda. All rights reserved.
 //
 
@@ -12,6 +12,8 @@ class TableViewController: UIViewController {
 
     var items = [DataItem]()
     var otherItems = [DataItem]()
+    //playing around adding extra DataItem
+    var anOtherItems = [DataItem]()
     var allItems = [[DataItem]]()
     
     override func viewDidLoad() {
@@ -21,22 +23,29 @@ class TableViewController: UIViewController {
         
         for i in 1...12 {
             if i > 9 {
-                items.append(DataItem(title: "Title #\(i)", subtitle: "This is subtitle #\(i)", imageName: "img\(i).jpg"))
+                items.append(DataItem(title: "View #\(i)", subtitle: "This is  #\(i)", imageName: "img\(i).jpg"))
             } else {
-                items.append(DataItem(title: "Title #0\(i)", subtitle: "This is subtitle #0\(i)", imageName: "img0\(i).jpg"))
+                items.append(DataItem(title: "View #0\(i)", subtitle: "This is  #0\(i)", imageName: "img0\(i).jpg"))
             }
         }
         
         for i in 1...12 {
             if i > 9 {
-                otherItems.append(DataItem(title: "Another Title #\(i)", subtitle: "This is another subtitle #\(i)", imageName: "anim\(i).jpg"))
+                otherItems.append(DataItem(title: "Other View #\(i)", subtitle: "This is  #\(i)", imageName: "anim\(i).jpg"))
             } else {
-                otherItems.append(DataItem(title: "Another Title #0\(i)", subtitle: "This is another subtitle #0\(i)", imageName: "anim0\(i).jpg"))
+                otherItems.append(DataItem(title: "Other View #0\(i)", subtitle: "This is #0\(i)", imageName: "anim0\(i).jpg"))
             }
+        }
+        
+        for i in 1...6 {
+
+                otherItems.append(DataItem(title: "Another View #0\(i)", subtitle: "This is #0\(i)", imageName: "eg\(i).jpg"))
+            
         }
         
         allItems.append(items)
         allItems.append(otherItems)
+        allItems.append(anOtherItems)
         // Do any additional setup after loading the view, typically from a nib.
     
         tableView.allowsSelectionDuringEditing = true
@@ -114,7 +123,7 @@ extension TableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section #\(section)"
+        return "Section #\(section + 1)"
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
