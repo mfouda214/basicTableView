@@ -12,7 +12,7 @@ class TableViewController: UIViewController {
 
     var items = [DataItem]()
     var otherItems = [DataItem]()
-    //playing around adding extra DataItem
+    //back for playing around adding extra DataItem
     var anOtherItems = [DataItem]()
     var allItems = [[DataItem]]()
     
