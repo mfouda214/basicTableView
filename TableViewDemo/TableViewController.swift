@@ -13,7 +13,7 @@ class TableViewController: UIViewController {
     var items = [DataItem]()
     var otherItems = [DataItem]()
     //playing around adding extra DataItem
-    //var anOtherItems = [DataItem]()
+    var anOtherItems = [DataItem]()
     var allItems = [[DataItem]]()
     
     override func viewDidLoad() {
@@ -37,15 +37,15 @@ class TableViewController: UIViewController {
             }
         }
         
-//        for i in 1...6 {
-//
-//                otherItems.append(DataItem(title: "Another View #0\(i)", subtitle: "This is #0\(i)", imageName: "eg\(i).jpg"))
-//
-//        }
+        for i in 1...6 {
+
+                otherItems.append(DataItem(title: "Another View #0\(i)", subtitle: "This is #0\(i)", imageName: "eg\(i).jpg"))
+            
+        }
         
         allItems.append(items)
         allItems.append(otherItems)
-//        allItems.append(anOtherItems)
+        allItems.append(anOtherItems)
         // Do any additional setup after loading the view, typically from a nib.
     
         tableView.allowsSelectionDuringEditing = true
